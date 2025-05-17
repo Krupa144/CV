@@ -1,3 +1,2 @@
 # My CV
-https://krupa144.github.io/cv/
-
+ https://krupa144.github.io/CV/
