@@ -7,7 +7,7 @@
     --dark: #2b2d42;
     --dark-gray: #4a4e69;
     --medium-gray: #8e9aaf;
-    --light-gray: #e2e8f0;
+    --light-gray: 	#d9d9d9	 ;
     --light: #f8f9fa;
     --white: #ffffff;
     --border-radius: 16px;
@@ -93,6 +93,13 @@ header h1 i {
 .projects-section {
     animation: fadeIn 0.6s ease-out forwards;
 }
+
+.project-container {
+    margin-bottom: 3rem; 
+    background-color: var(--light-gray);
+    border-radius: 20px;
+}
+
 
 .section-header {
     margin-bottom: var(--spacing);
@@ -189,6 +196,7 @@ header h1 i {
 .project-links {
     display: flex;
     gap: 10px;
+    height: 45px;
 }
 
 .project-link {

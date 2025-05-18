@@ -39,10 +39,10 @@ body {
   background: var(--glass-bg);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--glass-border);
   border-radius: var(--border-radius);
   padding: calc(var(--spacing) * 1.5);
   box-shadow: var(--shadow);
-  border: 1px solid var(--glass-border);
   transition: var(--transition);
 }
 
@@ -85,7 +85,7 @@ header:hover h1 i {
   background: var(--primary);
   color: white;
   text-decoration: none;
-  border-radius: 50px;
+  border-radius: 30px;
   font-weight: 600;
   transition: var(--transition);
   box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
@@ -175,6 +175,7 @@ header:hover h1 i {
   transition: var(--transition);
   text-align: center;
   aspect-ratio: 1/1;
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
 .tech-card:hover {
@@ -283,18 +284,13 @@ footer {
   animation: fadeIn 0.6s ease-out forwards;
 }
 
-.tech-card {
-  animation: fadeIn 0.6s ease-out forwards;
-}
 @media (max-width: 900px) {
   .main-grid {
     grid-template-columns: 1fr;
   }
-  
   .about-section {
     grid-template-columns: 1fr;
   }
-  
   .profile-photo {
     margin: 0 auto;
   }
@@ -304,16 +300,13 @@ footer {
   :root {
     --spacing: 16px;
   }
-  
   .header-content {
     flex-direction: column;
     text-align: center;
   }
-  
-  .nav-buttons {
+  .nav-button {
     justify-content: center;
   }
-  
   .tech-container {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
