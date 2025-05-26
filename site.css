@@ -143,15 +143,24 @@ nav {
 }
 
 .project-links a {
-    text-decoration: none;
-    color: #1a1a1a;
-    margin-left: 1rem;
-    font-weight: 500;
+  font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: white;
+    margin-bottom: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration:none;
     transition: color 0.3s;
+
 }
 
+
 .project-links a:hover {
-    color: #2e35d3;
+    background-color: #ffffff;
+    color: #1a1a1a;
 }
 
 .project-description {
@@ -260,4 +269,29 @@ nav {
     font-size: 0.8rem;
     padding: 0.25rem 0.6rem;
   }
+   .project-header {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .project-links a {
+    font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: white;
+    margin-bottom: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .project-links a i {
+    font-size: 1.2rem;
+  }
+
+  .project-title {
+    font-size: 1rem;
+  }
 }
+
