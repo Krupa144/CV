@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(to right, #eaf0ff, #f9fafe);
+    background-color:#ffffff;
     color: #1a1a1a;
     line-height: 1.6;
 }
@@ -40,21 +40,34 @@ body {
     gap: 0.5rem;
 }
 
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
 .nav-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    text-decoration: none;
-    color: #1a1a1a;
-    background-color: #f0f3ff;
-    padding: 0.6rem 1.2rem;
-    border-radius: 10px;
-    font-weight: 500;
-    transition: background 0.3s;
+  background:#1a1a1a;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .nav-button:hover {
-    background-color: #dbe3ff;
+  background: white;
+  color: var(--primary-color);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(33, 37, 41, 0.3);
+}
+
+.nav-button:active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(33, 37, 41, 0.2);
 }
 
 .projects-section {
@@ -131,7 +144,7 @@ body {
 
 .project-links a {
     text-decoration: none;
-    color: #5c67f2;
+    color: #1a1a1a;
     margin-left: 1rem;
     font-weight: 500;
     transition: color 0.3s;

@@ -5,96 +5,219 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Modern Tech Stack</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass-container {
+                background: rgba(255, 255, 255, 0.6);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            }
+            .tech-container-inner {
+                animation: scroll-left 20s linear infinite;
+            }
+            @keyframes scroll-left {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+        }
+    </style>
 </head>
-<body>
-    <div class="app-container">
-        <header class="glass-container">
-            <div class="header-content">
-                <h1><i class="bi bi-code-slash"></i> My Tech Stack</h1>
-                <nav>
-                    <a href="projects.html" class="nav-button">
+<body class="bg-gray-100 text-gray-900 min-h-screen flex justify-center p-8 font-['Inter']">
+    <div class="w-full max-w-6xl flex flex-col gap-8">
+        <header class="glass-container rounded-2xl p-8 flex justify-between items-center">
+            <div class="flex flex-col gap-4">
+                <h1 class="text-3xl font-semibold flex items-center gap-2">
+                    <i class="bi bi-code-slash"></i> My Tech Stack
+                </h1>
+                <nav class="flex gap-4">
+                    <a href="projects.html" class="bg-gray-900 text-white px-4 py-4 rounded-lg flex items-center gap-2 font-medium hover:bg-white hover:text-gray-900 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 active:translate-y-0 active:shadow-md">
                         <i class="bi bi-kanban-fill"></i> Projects
                     </a>
-                    <a href="experience.html" class="nav-button">
+                    <a href="experience.html" class="bg-gray-900 text-white px-4 py-4 rounded-lg flex items-center gap-2 font-medium hover:bg-white hover:text-gray-900 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 active:translate-y-0 active:shadow-md">
                         <i class="bi bi-file-earmark"></i> Experience
                     </a>
                 </nav>
             </div>
         </header>
-
-        <section class="about-section glass-container">
-            <div class="about-content">
-                <div class="about-text">
-                    <img class="profile-photo" src="./img/picture.jpg" alt="Moje zdjęcie" />
-                    <h2>About Me</h2>
-                    <div class="about-description">
-                        <p>Hello! I'm <span class="highlight">Kacper</span>, a passionate developer specializing in backend technologies, though frontend development is not unfamiliar to me.</p>
+        <section class="glass-container rounded-2xl p-8">
+            <div class="flex flex-col gap-4">
+                <div>
+                    <img class="w-36 h-36 rounded-2xl object-cover mb-4" src="./img/picture.jpg" alt="Moje zdjęcie" />
+                    <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+                    <div class="flex flex-col gap-2 mb-4">
+                        <p>Hello! I'm <span class="font-semibold text-blue-600">Kacper</span>, a passionate developer specializing in backend technologies, though frontend development is not unfamiliar to me.</p>
                         <p>I focus on building robust and scalable server-side applications, while also having a solid understanding of creating user-friendly interfaces.</p>
                     </div>
-                    <div class="about-details">
-                        <div class="detail-item"><i class="bi bi-geo-alt"></i> <span>Based in Kraków, Poland</span></div>
-                        <div class="detail-item">
-                        <i class="bi bi-laptop"></i> 
-                        <span>Omega Pilzno International Transport - WMS Specialist Trainee <em>(Completed)</em>:</span>
+                    <div class="flex flex-col gap-2">
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-geo-alt"></i>
+                            <span>Based in Kraków, Poland</span>
                         </div>
-                        <div class="detail-item"><i class="bi bi-mortarboard"></i> <span>Student at WSEI Kraków</span></div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-laptop"></i>
+                            <span>Omega Pilzno International Transport - WMS Specialist Trainee <em>(Completed)</em>:</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-mortarboard"></i>
+                            <span>Student at WSEI Kraków</span>
+                        </div>
                     </div>
-                    <div class="contact">
-                        <h3>Contact me:</h3>
-                        <div class="detail-item"><i class="bi bi-telephone-fill"></i><span>693623502</span></div>
-                        <div class="detail-item"><i class="bi bi-envelope-fill"></i><span>krupa.kacper14@gmail.com</span></div>
+                    <div class="mt-6">
+                        <h3 class="text-xl font-semibold mb-2">Contact me:</h3>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-telephone-fill"></i>
+                            <span>693623502</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-envelope-fill"></i>
+                            <span>krupa.kacper14@gmail.com</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <main class="tech-container">
-            <div class="tech-card"><i class="bi bi-filetype-js card-icon"></i><span>JavaScript</span></div>
-            <div class="tech-card"><i class="bi bi-filetype-cs card-icon"></i><span>.NET</span></div>
-            <div class="tech-card"><i class="bi bi-git card-icon"></i><span>Git</span></div>
-            <div class="tech-card"><i class="bi bi-filetype-css card-icon"></i><span>CSS</span></div>
-            <div class="tech-card"><i class="bi bi-filetype-html card-icon"></i><span>HTML</span></div>
-            <div class="tech-card"><i class="bi bi-filetype-php card-icon"></i><span>PHP</span></div>
-            <div class="tech-card"><i class="bi bi-filetype-json card-icon"></i><span>JSON</span></div>
-            <div class="tech-card"><span>MVC</span></div>
-            <div class="tech-card"><i class="bi bi-box card-icon"></i><span>Docker</span></div>
-            <div class="tech-card"><i class="bi bi-database card-icon"></i><span>SQL</span></div>
-            <div class="tech-card"><span>POSTMAN</span></div>
+        <main class="w-full overflow-hidden whitespace-nowrap relative">
+            <div class="flex gap-5 py-2 tech-container-inner">
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-filetype-js text-2xl text-gray-800"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-filetype-cs text-2xl text-gray-800"></i>
+                    <span>.NET</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-git text-2xl text-gray-800"></i>
+                    <span>Git</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-filetype-css text-2xl text-gray-800"></i>
+                    <span>CSS</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-filetype-html text-2xl text-gray-800"></i>
+                    <span>HTML</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-filetype-php text-2xl text-gray-800"></i>
+                    <span>PHP</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-filetype-json text-2xl text-gray-800"></i>
+                    <span>JSON</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <span>MVC</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-box text-2xl text-gray-800"></i>
+                    <span>Docker</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-database text-2xl text-gray-800"></i>
+                    <span>SQL</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <span>POSTMAN</span>
+                </div>
+
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-filetype-js text-2xl text-gray-800"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-filetype-cs text-2xl text-gray-800"></i>
+                    <span>.NET</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-git text-2xl text-gray-800"></i>
+                    <span>Git</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-filetype-css text-2xl text-gray-800"></i>
+                    <span>CSS</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-filetype-html text-2xl text-gray-800"></i>
+                    <span>HTML</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-filetype-php text-2xl text-gray-800"></i>
+                    <span>PHP</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-filetype-json text-2xl text-gray-800"></i>
+                    <span>JSON</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <span>MVC</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-box text-2xl text-gray-800"></i>
+                    <span>Docker</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <i class="bi bi-database text-2xl text-gray-800"></i>
+                    <span>SQL</span>
+                </div>
+                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                    <span>POSTMAN</span>
+                </div>
+            </div>
         </main>
 
+        <section class="glass-container rounded-2xl p-8">
+            <div class="flex flex-col gap-4">
+                <h1 class="text-2xl font-semibold flex items-center gap-2">
+                    <i class="bi bi-patch-check"></i> CERTIFICATES
+                </h1>
+                <div class="flex flex-col gap-2">
+                    <div class="flex items-center gap-2">
+                        <i class="bi bi-check2-circle"></i>
+                        <span>Information Technology Specialist in Networkin</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="bi bi-check2-circle"></i>
+                        <span>HTML and CSS</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="bi bi-check2-circle"></i>
+                        <span>AZ-900: Microsoft Azure Fundamentals</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-          <section class="about-section glass-container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h1><i class="bi bi-patch-check"></i>CERTIFICATES</h1>
-                    <div class="about-details">
-                        <div class="detail-item"><i class="bi bi-check2-circle"></i> <span>Information Technology Specialist in Networkin</span></div>
-                        <div class="detail-item"><i class="bi bi-check2-circle"></i><span>HTML and CSS</span></div>
-                        <div class="detail-item"><i class="bi bi-check2-circle"></i> <span>AZ-900: Microsoft Azure Fundamentals</span></div>
-                    </div>
+        <section class="glass-container rounded-2xl p-8">
+            <div class="flex flex-col gap-4">
+                <h1 class="text-2xl font-semibold flex items-center gap-2">
+                    <i class="bi bi-laptop"></i> HACKATON
+                </h1>
+                <div class="flex items-center gap-2">
+                    <i class="bi bi-laptop-fill"></i>
+                    <span>Kościuszkon II- 8.06.2024</span>
                 </div>
             </div>
         </section>
-          <section class="about-section glass-container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h1><i class="bi bi-laptop"></i>HACKATON</h1>
-                    <div class="about-details">
-                        <div class="detail-item"><i class="bi bi-laptop-fill"></i> <span>Kościuszkon II- 8.06.2024</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <footer class="glass-container">
-            <div class="footer-content">
-                <p><i class="bi bi-c-circle"></i> 2025 Tech Portfolio</p>
-                <div class="social-links">
-                    <a href="https://github.com/Krupa144" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                    <a href="https://www.linkedin.com/in/kacper-krupa-74277b2b7/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+
+        <footer class="glass-container rounded-2xl p-8 text-center">
+            <div class="flex justify-between items-center flex-wrap">
+                <p class="flex items-center gap-1">
+                    <i class="bi bi-c-circle"></i> 2025 Tech Portfolio
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://github.com/Krupa144" aria-label="GitHub" class="text-gray-900 text-2xl hover:text-blue-600 transition-colors">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kacper-krupa-74277b2b7/" aria-label="LinkedIn" class="text-gray-900 text-2xl hover:text-blue-600 transition-colors">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
                 </div>
             </div>
         </footer>
