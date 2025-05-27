@@ -5,27 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Modern Tech Stack</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .glass-container {
-                background: rgba(255, 255, 255, 0.6);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.4);
-                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            }
-            .tech-container-inner {
-                animation: scroll-left 20s linear infinite;
-            }
-            @keyframes scroll-left {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-50%); }
-            }
-        }
-    </style>
 </head>
 <body class="bg-gray-100 text-gray-900 min-h-screen flex justify-center p-8 font-['Inter']">
     <div class="w-full max-w-6xl flex flex-col gap-8">
@@ -44,6 +28,7 @@
                 </nav>
             </div>
         </header>
+
         <section class="glass-container rounded-2xl p-8">
             <div class="flex flex-col gap-4">
                 <div>
@@ -82,93 +67,62 @@
             </div>
         </section>
 
-        <main class="w-full overflow-hidden whitespace-nowrap relative">
-            <div class="flex gap-5 py-2 tech-container-inner">
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-filetype-js text-2xl text-gray-800"></i>
-                    <span>JavaScript</span>
+        <main class="w-full">
+            <div class="tech-scroll-container flex items-center gap-2">
+                <button id="scrollLeft" aria-label="Scroll Left" class="scroll-button p-2 rounded bg-gray-200 hover:bg-gray-300">
+                    <i class="bi bi-chevron-left text-xl"></i>
+                </button>
+                
+                <div class="overflow-x-auto whitespace-nowrap scroll-smooth tech-container-inner py-2 flex-1">
+                    <div class="inline-flex gap-5">
+                        <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                            <i class="bi bi-filetype-js text-2xl text-gray-800"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                            <i class="bi bi-filetype-cs text-2xl text-gray-800"></i>
+                            <span>.NET</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                            <i class="bi bi-git text-2xl text-gray-800"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                            <i class="bi bi-filetype-css text-2xl text-gray-800"></i>
+                            <span>CSS</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                            <i class="bi bi-filetype-html text-2xl text-gray-800"></i>
+                            <span>HTML</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                            <i class="bi bi-filetype-php text-2xl text-gray-800"></i>
+                            <span>PHP</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                            <i class="bi bi-filetype-json text-2xl text-gray-800"></i>
+                            <span>JSON</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                            <span>MVC</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                            <i class="bi bi-box text-2xl text-gray-800"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                            <i class="bi bi-database text-2xl text-gray-800"></i>
+                            <span>SQL</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
+                            <span>POSTMAN</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-filetype-cs text-2xl text-gray-800"></i>
-                    <span>.NET</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-git text-2xl text-gray-800"></i>
-                    <span>Git</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-filetype-css text-2xl text-gray-800"></i>
-                    <span>CSS</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-filetype-html text-2xl text-gray-800"></i>
-                    <span>HTML</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-filetype-php text-2xl text-gray-800"></i>
-                    <span>PHP</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-filetype-json text-2xl text-gray-800"></i>
-                    <span>JSON</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <span>MVC</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-box text-2xl text-gray-800"></i>
-                    <span>Docker</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-database text-2xl text-gray-800"></i>
-                    <span>SQL</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <span>POSTMAN</span>
-                </div>
-
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-filetype-js text-2xl text-gray-800"></i>
-                    <span>JavaScript</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-filetype-cs text-2xl text-gray-800"></i>
-                    <span>.NET</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-git text-2xl text-gray-800"></i>
-                    <span>Git</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-filetype-css text-2xl text-gray-800"></i>
-                    <span>CSS</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-filetype-html text-2xl text-gray-800"></i>
-                    <span>HTML</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-filetype-php text-2xl text-gray-800"></i>
-                    <span>PHP</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-filetype-json text-2xl text-gray-800"></i>
-                    <span>JSON</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <span>MVC</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-box text-2xl text-gray-800"></i>
-                    <span>Docker</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <i class="bi bi-database text-2xl text-gray-800"></i>
-                    <span>SQL</span>
-                </div>
-                <div class="flex items-center gap-2 p-10 px-16 bg-white rounded-xl shadow-sm flex-shrink-0">
-                    <span>POSTMAN</span>
-                </div>
+                
+                <button id="scrollRight" aria-label="Scroll Right" class="scroll-button p-2 rounded bg-gray-200 hover:bg-gray-300">
+                    <i class="bi bi-chevron-right text-xl"></i>
+                </button>
             </div>
         </main>
 
@@ -197,16 +151,21 @@
         <section class="glass-container rounded-2xl p-8">
             <div class="flex flex-col gap-4">
                 <h1 class="text-2xl font-semibold flex items-center gap-2">
-                    <i class="bi bi-laptop"></i> HACKATON
+                    <i class="bi bi-briefcase"></i> WORK EXPERIENCE
                 </h1>
-                <div class="flex items-center gap-2">
-                    <i class="bi bi-laptop-fill"></i>
-                    <span>Kościuszkon II- 8.06.2024</span>
+                <div class="flex flex-col gap-2">
+                    <div class="flex items-center gap-2">
+                        <i class="bi bi-check2-circle"></i>
+                        <span>Internship at Omega Pilzno International Transport</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="bi bi-check2-circle"></i>
+                        <span>Student at WSEI Kraków</span>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <footer class="glass-container rounded-2xl p-8 text-center">
+          <footer class="glass-container rounded-2xl p-8 text-center">
             <div class="flex justify-between items-center flex-wrap">
                 <p class="flex items-center gap-1">
                     <i class="bi bi-c-circle"></i> 2025 Tech Portfolio
@@ -222,5 +181,7 @@
             </div>
         </footer>
     </div>
+   <script src="index.js"></script>
+
 </body>
 </html>
