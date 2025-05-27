@@ -198,7 +198,6 @@ footer {
   color: var(--secondary-color);
 }
 
-/* TABLETY I MNIEJ (<=768px) */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -237,7 +236,6 @@ footer {
   }
 }
 
-/* TELEFONY (<=480px) */
 @media (max-width: 480px) {
   body {
     padding: 1rem;
